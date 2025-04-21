@@ -216,14 +216,13 @@ export function createSettingsHtml() {
                     </select>
                 </div>
 
-                {/* --- 自定义图标设置 --- */}
                 <div class="flex-container flexGap5 custom-icon-container" style="display: none; margin-top:10px; align-items: center;">
                     <label for="${Constants.ID_CUSTOM_ICON_URL}">自定义图标:</label>
                     <div style="display:flex; flex-grow:1; gap:5px; align-items: center;">
                         <input type="text" id="${Constants.ID_CUSTOM_ICON_URL}" class="text_pole" style="flex-grow:1;"
                                placeholder="URL, base64, 或 SVG 代码" />
                         <input type="number" id="${Constants.ID_CUSTOM_ICON_SIZE_INPUT}" class="text_pole" style="width: 60px;"
-                               min="10" max="50" step="1" placeholder="大小" title="图标大小 (像素)"> {/* <-- 新增大小输入 */}
+                               min="10" max="50" step="1" placeholder="大小" title="图标大小 (像素)"> 
                         <input type="file" id="icon-file-upload" accept="image/*, image/svg+xml" style="display:none" />
                         <button class="menu_button" style="width:auto; padding:0 10px; flex-shrink: 0;"
                                 onclick="document.getElementById('icon-file-upload').click()">
@@ -232,8 +231,7 @@ export function createSettingsHtml() {
                     </div>
                 </div>
 
-                {/* --- Font Awesome 图标设置 --- */}
-                <div class="flex-container flexGap5 fa-icon-container" style="display: none; margin-top:10px;"> {/* <-- 新增容器 */}
+                <div class="flex-container flexGap5 fa-icon-container" style="display: none; margin-top:10px;">
                     <label for="${Constants.ID_FA_ICON_CODE_INPUT}">FA 代码:</label>
                     <input type="text" id="${Constants.ID_FA_ICON_CODE_INPUT}" class="text_pole" style="flex-grow:1;"
                            placeholder='粘贴 FontAwesome HTML, 如 <i class="fa-solid fa-house"></i>' />
@@ -250,7 +248,7 @@ export function createSettingsHtml() {
                     <button id="${Constants.ID_MENU_STYLE_BUTTON}" class="menu_button" style="width:auto; padding:0 10px;">
                         <i class="fa-solid fa-palette"></i> 菜单样式
                     </button>
-                    <button id="${Constants.ID_USAGE_BUTTON}" class="menu_button" style="width:auto; padding:0 10px;"> {/* 使用常量 */}
+                    <button id="${Constants.ID_USAGE_BUTTON}" class="menu_button" style="width:auto; padding:0 10px;">
                         <i class="fa-solid fa-circle-info"></i> 使用说明
                     </button>
                     <button id="qr-save-settings" class="menu_button" style="width:auto; padding:0 10px;" onclick="window.quickReplyMenu.saveSettings()">
@@ -267,10 +265,9 @@ export function createSettingsHtml() {
 
 
 /**
- * 处理使用说明按钮点击 (逻辑不变)
+ * 处理使用说明按钮点击
  */
 export function handleUsageButtonClick() {
-     // ... (代码不变) ...
      // 确保使用更新后的 usagePanel 内容
     let usagePanel = document.getElementById(Constants.ID_USAGE_PANEL);
     if (usagePanel) {
@@ -290,7 +287,7 @@ export function handleUsageButtonClick() {
 }
 
 /**
- * 关闭使用说明面板 (逻辑不变)
+ * 关闭使用说明面板
  */
 export function closeUsagePanel() {
     const usagePanel = document.getElementById(Constants.ID_USAGE_PANEL);
@@ -331,10 +328,10 @@ export function handleSettingsChange(event) {
     else if (targetId === Constants.ID_CUSTOM_ICON_URL) {
         settings.customIconUrl = event.target.value;
     }
-    else if (targetId === Constants.ID_CUSTOM_ICON_SIZE_INPUT) { // <-- 新增处理
+    else if (targetId === Constants.ID_CUSTOM_ICON_SIZE_INPUT) { 
         settings.customIconSize = parseInt(event.target.value, 10) || Constants.DEFAULT_CUSTOM_ICON_SIZE;
     }
-    else if (targetId === Constants.ID_FA_ICON_CODE_INPUT) { // <-- 新增处理
+    else if (targetId === Constants.ID_FA_ICON_CODE_INPUT) { 
         settings.faIconCode = event.target.value;
     }
     else if (targetId === Constants.ID_COLOR_MATCH_CHECKBOX) {
@@ -357,15 +354,15 @@ function saveSettings() {
     const enabledDropdown = document.getElementById(Constants.ID_SETTINGS_ENABLED_DROPDOWN);
     const iconTypeDropdown = document.getElementById(Constants.ID_ICON_TYPE_DROPDOWN);
     const customIconUrl = document.getElementById(Constants.ID_CUSTOM_ICON_URL);
-    const customIconSizeInput = document.getElementById(Constants.ID_CUSTOM_ICON_SIZE_INPUT); // <-- 新增
-    const faIconCodeInput = document.getElementById(Constants.ID_FA_ICON_CODE_INPUT); // <-- 新增
+    const customIconSizeInput = document.getElementById(Constants.ID_CUSTOM_ICON_SIZE_INPUT); 
+    const faIconCodeInput = document.getElementById(Constants.ID_FA_ICON_CODE_INPUT); 
     const colorMatchCheckbox = document.getElementById(Constants.ID_COLOR_MATCH_CHECKBOX);
 
     if (enabledDropdown) settings.enabled = enabledDropdown.value === 'true';
     if (iconTypeDropdown) settings.iconType = iconTypeDropdown.value;
     if (customIconUrl) settings.customIconUrl = customIconUrl.value;
-    if (customIconSizeInput) settings.customIconSize = parseInt(customIconSizeInput.value, 10) || Constants.DEFAULT_CUSTOM_ICON_SIZE; // <-- 新增
-    if (faIconCodeInput) settings.faIconCode = faIconCodeInput.value; // <-- 新增
+    if (customIconSizeInput) settings.customIconSize = parseInt(customIconSizeInput.value, 10) || Constants.DEFAULT_CUSTOM_ICON_SIZE; 
+    if (faIconCodeInput) settings.faIconCode = faIconCodeInput.value; 
     if (colorMatchCheckbox) settings.matchButtonColors = colorMatchCheckbox.checked;
 
     // 触发一次图标更新，以防万一DOM值和内存值不一致
@@ -510,10 +507,10 @@ export function loadAndApplySettings() {
     const customIconUrlInput = document.getElementById(Constants.ID_CUSTOM_ICON_URL);
     if (customIconUrlInput) customIconUrlInput.value = settings.customIconUrl;
 
-    const customIconSizeInput = document.getElementById(Constants.ID_CUSTOM_ICON_SIZE_INPUT); // <-- 新增
+    const customIconSizeInput = document.getElementById(Constants.ID_CUSTOM_ICON_SIZE_INPUT); 
     if (customIconSizeInput) customIconSizeInput.value = settings.customIconSize;
 
-    const faIconCodeInput = document.getElementById(Constants.ID_FA_ICON_CODE_INPUT); // <-- 新增
+    const faIconCodeInput = document.getElementById(Constants.ID_FA_ICON_CODE_INPUT); 
     if (faIconCodeInput) faIconCodeInput.value = settings.faIconCode;
 
     const colorMatchCheckbox = document.getElementById(Constants.ID_COLOR_MATCH_CHECKBOX);
