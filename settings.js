@@ -136,8 +136,8 @@ export function createSettingsHtml() {
                         <li>调色盘</li>
                         <li>星月</li>
                         <li>五芒星</li>
-                        <li>Font Awesome（使用代码）</li> {/* <-- 更新 */}
-                        <li>自定义图标（URL/SVG/上传）</li> {/* <-- 更新 */}
+                        <li>Font Awesome（使用HTML代码）</li> 
+                        <li>自定义图标（URL/SVG/上传，图片形状可自行裁剪）</li> 
                     </ul>
                 </li>
             </ul>
@@ -153,26 +153,47 @@ export function createSettingsHtml() {
                 </li>
                 <li>若选择“Font Awesome”：
                     <ul>
-                        <li>需要在一个文本框中输入完整的 Font Awesome 图标 HTML 代码，例如 <code><i class="fa-solid fa-camera"></i></code>。</li>
+                        <li>需要在一个文本框中输入完整的 Font Awesome 图标 HTML 代码（fontawesome.com），例如 <code><i class="fa-solid fa-camera"></i></code>。</li>
                         <li>图标的大小和颜色将尽量匹配按钮的样式。</li>
                     </ul>
                 </li>
                 <li>可以勾选“使用与发送按钮相匹配的颜色风格”，让图标颜色自动适配发送按钮的类别（主按钮/次按钮）。</li>
             </ul>
 
-            <p><strong>然后，你可以通过点击“菜单样式”按钮，来自定义快捷回复菜单的外观：</strong></p>
+<p><strong>然后，你可以通过点击“菜单样式”按钮，来自定义快捷回复菜单的外观：</strong></p>
             <ul>
-                 {...菜单样式说明不变...}
+                <li><strong>菜单项样式：</strong>
+                    <ul>
+                        <li>设置菜单项的背景颜色和透明度（通过滑动条调节）。</li>
+                        <li>设置菜单项的文字颜色。</li>
+                    </ul>
+                </li>
+                <li><strong>标题样式：</strong>
+                    <ul>
+                        <li>设置标题文字的颜色。</li>
+                        <li>设置分割线的颜色。</li>
+                    </ul>
+                </li>
+                <li><strong>其他样式设置：</strong>
+                    <ul>
+                        <li>设置无快捷回复项时提示文字的颜色。</li>
+                        <li>设置整个菜单面板的背景颜色、透明度和边框颜色。</li>
+                    </ul>
+                </li>
             </ul>
-
-             <p><strong>调整样式后，有两个控制按钮可供使用：</strong></p>
+        
+            <p><strong>调整样式后，有两个控制按钮可供使用：</strong></p>
             <ul>
-                 {...样式控制说明不变...}
+                <li>恢复默认：将所有样式设置还原为初始状态。</li>
+                <li>应用样式：保存并应用当前的样式修改。</li>
             </ul>
-
+        
             <p><strong>这里有一些使用这款插件的小技巧：</strong></p>
             <ul>
-                 {...使用技巧不变...}
+                <li>点击菜单外部的任意区域可以关闭菜单。</li>
+                <li>你可以通过更改图标类型和颜色，使其更好地匹配你的界面主题。</li>
+                <li>对于经常在各种聊天中使用的回复，建议添加到“全局快速回复”中。</li>
+                <li>对于只在特定聊天场景下使用的回复，则更适合添加到“聊天快速回复”中。</li>
             </ul>
 
             <p><strong>最后是关于数据保存：</strong></p>
