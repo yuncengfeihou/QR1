@@ -253,7 +253,7 @@ export function createSettingsHtml() {
                 </div>
 
                 <div class="flex-container flexGap5 fa-icon-container" style="display: none; margin-top:10px;">
-                    <label for="${Constants.ID_FA_ICON_CODE_INPUT}">FA 代码:</label>
+                    <label for="${Constants.ID_FA_ICON_CODE_INPUT}">FA 代码（fontawesome.com）:</label>
                     <input type="text" id="${Constants.ID_FA_ICON_CODE_INPUT}" class="text_pole" style="flex-grow:1;"
                            placeholder='粘贴 FontAwesome HTML, 如 <i class="fa-solid fa-house"></i>' />
                 </div>
