@@ -148,10 +148,10 @@ export function createSettingsHtml() {
                     <ul>
                         <li>可以通过输入图标的URL、base64编码或SVG代码来设置。</li>
                         <li>也可以点击“选择文件”上传本地图片。</li>
-                        <li>旁边有一个数字输入框，可以调整图标在按钮上显示的大小（单位：像素）。</li> {/* <-- 新增 */}
+                        <li>旁边有一个数字输入框，可以调整图标在按钮上显示的大小（单位：像素）。</li>
                     </ul>
                 </li>
-                <li>若选择“Font Awesome”： {/* <-- 新增 */}
+                <li>若选择“Font Awesome”：
                     <ul>
                         <li>需要在一个文本框中输入完整的 Font Awesome 图标 HTML 代码，例如 <code><i class="fa-solid fa-camera"></i></code>。</li>
                         <li>图标的大小和颜色将尽量匹配按钮的样式。</li>
@@ -211,7 +211,7 @@ export function createSettingsHtml() {
                         <option value="${Constants.ICON_TYPES.COMMENT}">调色盘</option>
                         <option value="${Constants.ICON_TYPES.STAR}">星月</option>
                         <option value="${Constants.ICON_TYPES.BOLT}">五芒星</option>
-                        <option value="${Constants.ICON_TYPES.FONTAWESOME}">Font Awesome</option> {/* <-- 新增 */}
+                        <option value="${Constants.ICON_TYPES.FONTAWESOME}">Font Awesome</option> 
                         <option value="${Constants.ICON_TYPES.CUSTOM}">自定义图标</option>
                     </select>
                 </div>
@@ -493,8 +493,8 @@ export function loadAndApplySettings() {
     settings.enabled = settings.enabled !== false; // 默认启用
     settings.iconType = settings.iconType || Constants.ICON_TYPES.ROCKET;
     settings.customIconUrl = settings.customIconUrl || '';
-    settings.customIconSize = settings.customIconSize || Constants.DEFAULT_CUSTOM_ICON_SIZE; // <-- 新增
-    settings.faIconCode = settings.faIconCode || ''; // <-- 新增
+    settings.customIconSize = settings.customIconSize || Constants.DEFAULT_CUSTOM_ICON_SIZE; 
+    settings.faIconCode = settings.faIconCode || ''; 
     settings.matchButtonColors = settings.matchButtonColors !== false; // 默认匹配颜色
 
     // 应用设置到UI元素
