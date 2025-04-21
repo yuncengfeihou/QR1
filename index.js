@@ -16,8 +16,8 @@ if (!window.extension_settings[Constants.EXTENSION_NAME]) {
         enabled: true,
         iconType: Constants.ICON_TYPES.ROCKET,
         customIconUrl: '',
-        customIconSize: Constants.DEFAULT_CUSTOM_ICON_SIZE, // <-- 新增默认值
-        faIconCode: '',                                  // <-- 新增默认值
+        customIconSize: Constants.DEFAULT_CUSTOM_ICON_SIZE, 
+        faIconCode: '',                                  
         matchButtonColors: true,
         menuStyles: JSON.parse(JSON.stringify(Constants.DEFAULT_MENU_STYLES))
     };
